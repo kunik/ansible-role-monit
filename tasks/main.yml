@@ -1,0 +1,13 @@
+- name: install 'monit'
+  sudo: true
+  apt: pkg=monit state=present
+
+- name: generate monitrc
+  sudo: true
+  template: >
+    src=monitrc.j2
+    dest=/etc/monit/monitrc
+    owner=root
+    group=root
+    mode=0644
+  notify: restart monit

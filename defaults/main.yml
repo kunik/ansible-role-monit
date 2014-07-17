@@ -1,0 +1,3 @@
+monit:
+  check_interval: 120
+  log_file: /var/log/monit.log
